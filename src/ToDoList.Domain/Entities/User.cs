@@ -1,3 +1,4 @@
+using ToDoList.Core.Exceptions;
 using ToDoList.Domain.Validators;
 
 namespace ToDoList.Domain.Entities;
@@ -35,7 +36,7 @@ public class User : Base
             foreach (var error in validation.Errors)
                 _errors.Add(error.ErrorMessage);
 
-            throw new Exception("Alguns campos estão incorretos, por favor, corrijá-os!" + _errors);
+            throw new DomainException("Alguns campos estão incorretos, por favor, corrijá-os!" + _errors);
         }
 
         return true;

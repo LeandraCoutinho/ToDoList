@@ -14,4 +14,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ToDoList.Infra.Data\ToDoList.Infra.Data.csproj" />
+    </ItemGroup>
+
 </Project>

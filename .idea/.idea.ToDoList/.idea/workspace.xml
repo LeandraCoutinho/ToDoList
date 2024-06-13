@@ -11,27 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2abd029-de2c-4532-8c39-9b63a0d00b85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ToDoList.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/ToDoList.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Core/ToDoList.Core.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Base.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/ToDoList.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Validators/AssignmentListValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Validators/AssignmentValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Validators/UserValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/ToDoList.Infra.Data.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentListRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IUserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentListMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/UserMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentListRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Context/ToDoListContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Context/ToDoListContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repository/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/BaseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/ToDoList.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/ToDoList.Infra.Data.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +50,8 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -153,6 +148,10 @@
       <updated>1718029149441</updated>
       <workItem from="1718029150249" duration="2573000" />
       <workItem from="1718038698351" duration="6113000" />
+      <workItem from="1718150562309" duration="4153000" />
+      <workItem from="1718194574369" duration="7407000" />
+      <workItem from="1718205429612" duration="1579000" />
+      <workItem from="1718228534855" duration="769000" />
     </task>
     <servers />
   </component>

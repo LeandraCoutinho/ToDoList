@@ -6,7 +6,8 @@ public class AssignmentList : Base
 {
     public string Name { get; private set; }
     public int UserId { get; private set; }
-    
+
+    public User User { get; set; }
     public ICollection<Assignment> Assignments { get; set; }
 
     public AssignmentList()
@@ -16,7 +17,6 @@ public class AssignmentList : Base
     {
         Name = name;
         UserId = userId;
-        Assignments = new List<Assignment>();
     }
 
     public override bool Validate()

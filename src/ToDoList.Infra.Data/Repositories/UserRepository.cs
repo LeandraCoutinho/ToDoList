@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using ToDoList.Domain.Contracts;
 using ToDoList.Domain.Entities;
 using ToDoList.Infra.Data.Context;
-using ToDoList.Infra.Data.Repository;
 
 namespace ToDoList.Infra.Data.Repositories;
 

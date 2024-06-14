@@ -3,7 +3,7 @@ using ToDoList.Domain.Contracts;
 using ToDoList.Domain.Entities;
 using ToDoList.Infra.Data.Context;
 
-namespace ToDoList.Infra.Data.Repository;
+namespace ToDoList.Infra.Data.Repositories;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : Base
 {

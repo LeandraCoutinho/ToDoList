@@ -11,8 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// injeção de dependência
 builder.Services.AddInfraestructure(builder.Configuration);
-//builder.Services.AddServices(builder.Configuration);
+builder.Services.AddServices(builder.Configuration);
 
 builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),

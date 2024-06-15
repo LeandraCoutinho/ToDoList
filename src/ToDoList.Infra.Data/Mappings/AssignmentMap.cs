@@ -33,7 +33,7 @@ public class AssignmentMap : IEntityTypeConfiguration<Assignment>
             .HasDefaultValue(false)
             .HasColumnType("TINYINT");
 
-        builder.Property(x => x.ConcludedAt)
+        builder.Property(x => x.ConcluedAt)
             .IsRequired(false)
             .HasColumnType("DATETIME");
 

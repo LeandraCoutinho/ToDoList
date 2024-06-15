@@ -11,16 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2abd029-de2c-4532-8c39-9b63a0d00b85" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentListDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/UserDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentListService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentListService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/UserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Context/ToDoListContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Context/ToDoListContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/AutoMapper/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/AutoMapper/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentListRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentListRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/BaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/ToDoList.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/ToDoList.Infra.Data.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +161,9 @@
       <workItem from="1718281556050" duration="10704000" />
       <workItem from="1718311268120" duration="3026000" />
       <workItem from="1718314344041" duration="3177000" />
-      <workItem from="1718383778324" duration="2481000" />
+      <workItem from="1718383778324" duration="8666000" />
+      <workItem from="1718458379416" duration="5621000" />
+      <workItem from="1718483312136" duration="1923000" />
     </task>
     <servers />
   </component>

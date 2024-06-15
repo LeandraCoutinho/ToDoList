@@ -1,27 +1,32 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using ToDoList.Application.AutoMapper;
+using ToDoList.Application.Interfaces;
+using ToDoList.Application.Services;
 using ToDoList.Domain.Contracts;
-using ToDoList.Infra.Data.Context;
 using ToDoList.Infra.Data.Repositories;
 
 namespace ToDoList.Infra.Data;
 
 public static class DependencyInjection
 {
-    public static void AddInfraestructure(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfraestructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IAssignmentRepository, AssignmentRepository>();
         services.AddScoped<IAssignmentListRepository, AssignmentListRepository>();
+        
+        return services;
     }
-
-    /*
+    
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddAutoMapper(typeof(Domain));
-        
+        services.AddAutoMapper(typeof(AutoMapperProfile));
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAssignmentService, AssignmentService>();
+        services.AddScoped<IAssignmentListService, AssignmentListService>();
+
+        return services;
     }
-    */
+    
 }

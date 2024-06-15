@@ -9,7 +9,7 @@ public class Assignment : Base
     public int UserId { get; set; }
     public int? AssignmentListId { get; set; }
     public bool Concluded { get; private set; }
-    public DateTime? ConcludedAt { get; private set; }
+    public DateTime? ConcluedAt { get; private set; }
     public DateTime? Deadline { get; set; }
 
     public User User { get; set; }
@@ -24,20 +24,20 @@ public class Assignment : Base
         UserId = userId;
         AssignmentListId = assignmentListId;
         Concluded = concluded;
-        ConcludedAt = concludedAt;
+        ConcluedAt = concludedAt;
         Deadline = deadline;
     }
 
     public void SetConclud()
     {
         Concluded = true;
-        ConcludedAt = DateTime.Now;
+        ConcluedAt = DateTime.Now;
     }
 
     public void SetUnconclued()
     {
         Concluded = true;
-        ConcludedAt = null;
+        ConcluedAt = null;
     }
 
     public override bool Validate()

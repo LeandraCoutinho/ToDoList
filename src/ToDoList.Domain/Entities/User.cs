@@ -5,9 +5,9 @@ namespace ToDoList.Domain.Entities;
 
 public class User : Base
 {
-    public string Name { get; private set; }
-    public string Email { get; private set; }
-    public string Password { get; private set; }
+    public string Name { get; private set; } = null!;
+    public string Email { get; private set; } = null!;
+    public string Password { get; private set; } = null!;
     
     public ICollection<Assignment> Assignments { get; set; } 
     public ICollection<AssignmentList> AssignmentLists { get; set; }    
@@ -24,6 +24,8 @@ public class User : Base
         Assignments = new List<Assignment>();
         AssignmentLists = new List<AssignmentList>();
         _errors = new List<string>();
+
+        Validate();
     }
 
     public override bool Validate()

@@ -14,4 +14,17 @@
       <ProjectReference Include="..\ToDoList.Domain\ToDoList.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="AutoMapper\AutoMapperProfile.cs" />
+      <Compile Remove="AutoMapper\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="AutoMapper\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="AutoMapper\**" />
+    </ItemGroup>
+
 </Project>

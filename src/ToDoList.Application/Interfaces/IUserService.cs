@@ -9,6 +9,6 @@ public interface IUserService
     Task Remove(int id);
     Task<UserDTO> Get(int id);
     Task<List<UserDTO>> GetAll();
-    Task<List<UserDTO>> GetByEmail(string email);
+    Task<UserDTO> GetByEmail(string email);
     Task<List<UserDTO>> SearchByEmail(string email);
 }

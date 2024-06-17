@@ -1,4 +1,8 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ToDoList.API.ViewModels.UserViewModel;
+using ToDoList.Application.DTO;
+using ToDoList.Domain.Entities;
 using ToDoList.Infra.Data;
 using ToDoList.Infra.Data.Context;
 
@@ -14,6 +18,21 @@ builder.Services.AddSwaggerGen();
 // injeção de dependência
 builder.Services.AddInfraestructure(builder.Configuration);
 builder.Services.AddServices(builder.Configuration);
+
+builder.Services.AddHttpContextAccessor();
+
+AutoMapperDependenceInjection();
+
+void AutoMapperDependenceInjection()
+{
+    var autoMapperConfig = new MapperConfiguration(cfg =>
+    {
+        cfg.CreateMap<User, UserDTO>().ReverseMap();
+        cfg.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
+        cfg.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
+    });
+    builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
+}
 
 builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),

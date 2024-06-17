@@ -5,15 +5,15 @@ namespace ToDoList.Domain.Entities;
 
 public class Assignment : Base
 {
-    public string Description { get; set; }
+    public string Description { get; set; } = null!;
     public int UserId { get; set; }
     public int? AssignmentListId { get; set; }
     public bool Concluded { get; private set; }
     public DateTime? ConcluedAt { get; private set; }
     public DateTime? Deadline { get; set; }
 
-    public User User { get; set; }
-    public AssignmentList AssignmentList { get; set; }
+    public User User { get; set; } = null!;
+    public AssignmentList AssignmentList { get; set; } = null!;
     
     public Assignment()
     { }

@@ -23,7 +23,7 @@ public class UserService : IUserService
         var userExist = await _userRepository.GetByEmail(userDto.Email);
 
         if (userExist != null)
-            throw new DomainException("Já existe um usuário cadastrado!");
+            throw new DomainException("O email já está em uso!");
 
         var user = _mapper.Map<User>(userDto);
         user.Validate();
@@ -66,11 +66,11 @@ public class UserService : IUserService
         return _mapper.Map<List<UserDTO>>(allUsers);
     }
 
-    public async Task<List<UserDTO>> GetByEmail(string email)
+    public async Task<UserDTO> GetByEmail(string email)
     {
         var user = await _userRepository.GetByEmail(email);
 
-        return _mapper.Map<List<UserDTO>>(user);
+        return _mapper.Map<UserDTO>(user);
     }
 
     public async Task<List<UserDTO>> SearchByEmail(string email)

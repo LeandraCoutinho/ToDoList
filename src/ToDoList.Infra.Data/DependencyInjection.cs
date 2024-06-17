@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoList.Application.AutoMapper;
 using ToDoList.Application.Interfaces;
 using ToDoList.Application.Services;
 using ToDoList.Domain.Contracts;
@@ -21,7 +20,6 @@ public static class DependencyInjection
     
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddAutoMapper(typeof(AutoMapperProfile));
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IAssignmentService, AssignmentService>();
         services.AddScoped<IAssignmentListService, AssignmentListService>();

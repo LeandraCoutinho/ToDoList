@@ -8,8 +8,8 @@ public class Assignment : Base
     public string Description { get; set; } = null!;
     public int UserId { get; set; }
     public int? AssignmentListId { get; set; }
-    public bool Concluded { get; private set; }
-    public DateTime? ConcluedAt { get; private set; }
+    public bool Concluded { get; set; }
+    public DateTime? ConcluedAt { get; set; }
     public DateTime? Deadline { get; set; }
 
     public User User { get; set; } = null!;
@@ -18,14 +18,11 @@ public class Assignment : Base
     public Assignment()
     { }
 
-    public Assignment(string description, int userId, int? assignmentListId, bool concluded, DateTime? concludedAt, DateTime? deadline)
+    public Assignment(string description, bool concluded)
     {
         Description = description;
-        UserId = userId;
-        AssignmentListId = assignmentListId;
         Concluded = concluded;
-        ConcluedAt = concludedAt;
-        Deadline = deadline;
+        _errors = new List<string>();
     }
 
     public void SetConclud()

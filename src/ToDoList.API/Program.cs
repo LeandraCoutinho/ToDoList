@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ToDoList.API.ViewModels.AssignmentViewModel;
 using ToDoList.API.ViewModels.UserViewModel;
 using ToDoList.Application.DTO;
 using ToDoList.Domain.Entities;
@@ -30,9 +31,15 @@ void AutoMapperDependenceInjection()
         cfg.CreateMap<User, UserDTO>().ReverseMap();
         cfg.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
         cfg.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
+        
+        cfg.CreateMap<Assignment, AssignmentDTO>().ReverseMap();
+        cfg.CreateMap<CreateAssignmentViewModel, AssignmentDTO>().ReverseMap();
+        cfg.CreateMap<UpdateAssignmentViewModel, AssignmentDTO>().ReverseMap();
     });
     builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 }
+
+builder.Services.AddSingleton(d => builder.Configuration);
 
 builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),

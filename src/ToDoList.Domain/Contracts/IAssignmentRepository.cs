@@ -4,6 +4,7 @@ namespace ToDoList.Domain.Contracts;
 
 public interface IAssignmentRepository : IBaseRepository<Assignment>
 {
-    Task<List<Assignment>> GetById(int id, int userId);
+    Task<Assignment> GetById(int id, int userId);
+    Task<Assignment> GetByDescription(string description);
     Task<List<Assignment>> GetConcluded();
 }

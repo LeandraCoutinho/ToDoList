@@ -10,4 +10,5 @@ public interface IAssignmentService
     Task<AssignmentDTO> Get(int id);
     Task<List<AssignmentDTO>> GelAll();
     Task<List<AssignmentDTO>> GetConcluded();
+    Task<AssignmentDTO> GetByDescription(string description);
 }

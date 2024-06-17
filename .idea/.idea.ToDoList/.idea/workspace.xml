@@ -11,14 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2abd029-de2c-4532-8c39-9b63a0d00b85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Utilities/Responses.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/ResultViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserViewModel/CreateUserViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserViewModel/UpdateUserViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentViewModel/CreateAssignmentViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentViewModel/UpdateAssignmentViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/ToDoList.Application/AutoMapper/AutoMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -157,6 +162,10 @@
       <workItem from="1718483312136" duration="3188000" />
       <workItem from="1718573911231" duration="312000" />
       <workItem from="1718631286630" duration="3270000" />
+      <workItem from="1718640498757" duration="6762000" />
+      <workItem from="1718647629877" duration="2616000" />
+      <workItem from="1718655104891" duration="2898000" />
+      <workItem from="1718658039859" duration="5206000" />
     </task>
     <servers />
   </component>

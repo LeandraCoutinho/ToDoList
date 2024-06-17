@@ -14,14 +14,26 @@ public class AssignmentRepository : BaseRepository<Assignment>, IAssignmentRepos
         _context = context;
     }
 
-    public virtual async Task<List<Assignment>> GetById(int id, int userId)
+    public virtual async Task<Assignment> GetById(int id, int userId)
     {
-        return await _context.Assignments.Where
+        var assignment = await _context.Set<Assignment>().Where
             (
                 x => x.Id == id && x.UserId == userId
             )
             .AsNoTracking()
             .ToListAsync();
+
+        return assignment.FirstOrDefault();
+    }
+
+    public async Task<Assignment> GetByDescription(string description)
+    {
+        var assignmentDescription = await _context.Set<Assignment>().Where(
+                x => x.Description == description)
+            .AsNoTracking()
+            .ToListAsync();
+
+        return assignmentDescription.FirstOrDefault();
     }
 
     public virtual async Task<List<Assignment>> GetConcluded()

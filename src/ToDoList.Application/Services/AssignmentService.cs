@@ -20,10 +20,10 @@ public class AssignmentService : IAssignmentService
 
     public async Task<AssignmentDTO> Create(AssignmentDTO assignmentDto)
     {
-        var assignmentExist = await _assignmentRepository.GetById(assignmentDto.Id, assignmentDto.UserId);
+        var assignmentExist = await _assignmentRepository.GetByDescription(assignmentDto.Description);
 
         if (assignmentExist != null)
-            throw new DomainException("Já existe uma tarefa cadastrada com esse nome");
+            throw new DomainException("Já existe uma tarefa cadastrada com esse descrição.");
 
         var assignment = _mapper.Map<Assignment>(assignmentDto);
         assignment.Validate();
@@ -36,10 +36,13 @@ public class AssignmentService : IAssignmentService
     public async Task<AssignmentDTO> Update(AssignmentDTO assignmentDto)
     {
         var assignmetExist = await _assignmentRepository.GetById(assignmentDto.Id, assignmentDto.UserId);
-
+        
         if (assignmetExist == null)
-            throw new DomainException("Não foi encontrada nenhuma tarefa com o nome informado");
+            throw new DomainException("Não foi encontrada nenhuma tarefa com esse Id");
 
+        var assignment = _mapper.Map<Assignment>(assignmentDto);
+        assignment.Validate();
+        
         var assignmentUpdated = _mapper.Map<AssignmentDTO>(assignmentDto);
 
         return _mapper.Map<AssignmentDTO>(assignmentUpdated);
@@ -53,6 +56,9 @@ public class AssignmentService : IAssignmentService
     public async Task<AssignmentDTO> Get(int id)
     {
         var assignment = await _assignmentRepository.Get(id);
+
+        if (assignment == null)
+            throw new DomainException("Não foi encontrada nenhuma tarefa com o Id informado.");
 
         return _mapper.Map<AssignmentDTO>(assignment);
     }
@@ -69,5 +75,15 @@ public class AssignmentService : IAssignmentService
         var allConclueded = await _assignmentRepository.GetConcluded();
 
         return _mapper.Map<List<AssignmentDTO>>(allConclueded);
+    }
+
+    public async Task<AssignmentDTO> GetByDescription(string description)
+    {
+        var assignmentDescription = await _assignmentRepository.GetByDescription(description);
+
+        if (assignmentDescription == null)
+            throw new DomainException("Não existe nenhuma tarefa com essa descrição.");
+
+        return _mapper.Map<AssignmentDTO>(assignmentDescription);
     }
 }

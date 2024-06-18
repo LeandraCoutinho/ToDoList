@@ -11,22 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2abd029-de2c-4532-8c39-9b63a0d00b85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentListVM/CreateAssignmentListViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentListVM/UpdateAssignmentListViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AuthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Token/ITokenGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/Token/TokenGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/LoginViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Configuration/KeyConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AuthenticateLoginDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/LoginDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAuthenticateUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AuthenticateUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentViewModel/CreateAssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/CreateAssignmentViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentViewModel/UpdateAssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/UpdateAssignmentViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserViewModel/CreateUserViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserVM/CreateUserViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserViewModel/UpdateUserViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/UserVM/UpdateUserViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Interfaces/IAssignmentListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ToDoList.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/ToDoList.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/ToDoList.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.ToDoList.API: http.executor": "Debug",
+    ".NET Launch Settings Profile.ToDoList.API: http.executor": "Run",
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "XThreadsFramesViewSplitterKey": "0.37298092",
@@ -176,6 +178,8 @@
       <workItem from="1718716781722" duration="4551000" />
       <workItem from="1718722064317" duration="369000" />
       <workItem from="1718725712031" duration="4239000" />
+      <workItem from="1718732194643" duration="2395000" />
+      <workItem from="1718740292278" duration="7726000" />
     </task>
     <servers />
   </component>

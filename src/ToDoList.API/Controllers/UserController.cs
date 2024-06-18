@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
@@ -48,6 +49,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpPut]
     [Route("api/v1/users/update")]
     public async Task<IActionResult> Update([FromBody] UpdateUserViewModel userUserViewModel)
@@ -73,6 +75,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpDelete]
     [Route("/api/v1/users/remove{id}")]
     public async Task<IActionResult> Remove(int id)
@@ -107,6 +110,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/users/get/{id}")]
     public async Task<IActionResult> Get(int id)
@@ -139,6 +143,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/users/get-all")]
     public async Task<IActionResult> GetAll()
@@ -172,6 +177,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/users/get-by-email")]
     public async Task<IActionResult> GetByEmail([FromQuery] string email)
@@ -205,6 +211,7 @@ public class UserController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/users/search-by-email")]
     public async Task<IActionResult> SearchByEmail([FromQuery] string email)

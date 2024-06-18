@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using ToDoList.Application.DTO;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Exceptions;
@@ -11,11 +12,13 @@ public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
+    private readonly IPasswordHasher<User> _passwordHasher;
 
-    public UserService(IUserRepository userRepository, IMapper mapper)
+    public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher)
     {
         _userRepository = userRepository;
         _mapper = mapper;
+        _passwordHasher = passwordHasher;
     }
 
     public async Task<UserDTO> Create(UserDTO userDto)
@@ -26,6 +29,7 @@ public class UserService : IUserService
             throw new DomainException("O email já está em uso!");
 
         var user = _mapper.Map<User>(userDto);
+        user.Password = _passwordHasher.HashPassword(user, user.Password);
         user.Validate();
 
         var userCreated = await _userRepository.Create(user);
@@ -41,7 +45,9 @@ public class UserService : IUserService
             throw new DomainException("Não existe usuário com o Id informado!");
 
         var user = _mapper.Map<User>(userDto);
-
+        user.Password = _passwordHasher.HashPassword(user, user.Password);
+        user.Validate();
+        
         var userUpdated = await _userRepository.Update(user);
 
         return _mapper.Map<UserDTO>(userUpdated);

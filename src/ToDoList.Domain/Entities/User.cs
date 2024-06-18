@@ -7,7 +7,7 @@ public class User : Base
 {
     public string Name { get; private set; } = null!;
     public string Email { get; private set; } = null!;
-    public string Password { get; private set; } = null!;
+    public string Password { get; set; } = null!;
     
     public ICollection<Assignment> Assignments { get; set; } 
     public ICollection<AssignmentList> AssignmentLists { get; set; }    

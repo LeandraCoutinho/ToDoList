@@ -2,7 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
-using ToDoList.API.ViewModels.AssignmentViewModel;
+using ToDoList.API.ViewModels.AssignmentVM;
 using ToDoList.Application.DTO;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Exceptions;
@@ -41,11 +41,15 @@ public class AssignmentController : ControllerBase
         }
         catch (DomainException ex)
         {
+            //return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
+            Console.WriteLine($"Domain exception: {ex.Message}");
             return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Console.WriteLine($"Exception: {ex.Message}");
             return StatusCode(500, Responses.ApplicationErrorMessage());
+            //return StatusCode(500, Responses.ApplicationErrorMessage());
         }
     }
 
@@ -114,7 +118,7 @@ public class AssignmentController : ControllerBase
     {
         try
         {
-            var assignment = _assignmentService.Get(id);
+            var assignment = await _assignmentService.Get(id);
 
             if (assignment == null)
                 return Ok(new ResultViewModel

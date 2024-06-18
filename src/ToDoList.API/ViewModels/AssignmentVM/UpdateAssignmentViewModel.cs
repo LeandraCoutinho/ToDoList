@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDoList.API.ViewModels.AssignmentViewModel;
+namespace ToDoList.API.ViewModels.AssignmentVM;
 
 public class UpdateAssignmentViewModel
 {

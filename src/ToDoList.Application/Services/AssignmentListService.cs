@@ -66,11 +66,11 @@ public class AssignmentListService : IAssignmentListService
         return _mapper.Map<List<AssignmentListDTO>>(allAssignmetLists);
     }
 
-    public async Task<List<AssignmentListDTO>> GetByName(string name)
+    public async Task<AssignmentListDTO> GetByName(string name)
     {
         var assignmentList = await _assignmentListRepository.GetByName(name);
 
-        return _mapper.Map<List<AssignmentListDTO>>(assignmentList);
+        return _mapper.Map<AssignmentListDTO>(assignmentList);
     }
 
     public async Task<List<AssignmentListDTO>> SearchByName(string name)

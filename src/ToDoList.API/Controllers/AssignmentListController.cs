@@ -2,40 +2,41 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
-using ToDoList.API.ViewModels.UserVM;
+using ToDoList.API.ViewModels.AssignmentListVM;
 using ToDoList.Application.DTO;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Exceptions;
+using ToDoList.Domain.Entities;
 
 namespace ToDoList.API.Controllers;
 
 [Route(("api/[controller]"))]
 [ApiController]
 
-public class UserController : ControllerBase
+public class AssignmentListController : ControllerBase
 {
-    private readonly IUserService _userService;
+    private readonly IAssignmentListService _assignmentListService;
     private readonly IMapper _mapper;
 
-    public UserController(IUserService userService, IMapper mapper)
+    public AssignmentListController(IAssignmentListService assignmentListService, IMapper mapper)
     {
-        _userService = userService;
+        _assignmentListService = assignmentListService;
         _mapper = mapper;
     }
 
-    [Route("/api/v1/users/create")]
+    [Route("/api/v1/assignmentList/create")]
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateUserViewModel userViewModel)
+    public async Task<IActionResult> Create([FromBody] CreateAssignmentListViewModel createAssignmentListViewModel)
     {
         try
         {
-            var userDto = _mapper.Map<UserDTO>(userViewModel);
-            var userCreated = await _userService.Create(userDto);
+            var assignmentListDto = _mapper.Map<AssignmentListDTO>(createAssignmentListViewModel);
+            var assignmentListCreated = await _assignmentListService.Create(assignmentListDto);
             return Ok(new ResultViewModel
             {
-                Message = "Usuário criado com sucesso!",
+                Message = "Lista de tarefa criada com sucesso",
                 Success = true,
-                Data = userCreated
+                Data = assignmentListCreated
             });
         }
         catch (DomainException ex)
@@ -49,18 +50,18 @@ public class UserController : ControllerBase
     }
 
     [HttpPut]
-    [Route("api/v1/users/update")]
-    public async Task<IActionResult> Update([FromBody] UpdateUserViewModel userUserViewModel)
+    [Route("api/v1/assignmentList/update")]
+    public async Task<IActionResult> Update(UpdateAssignmentListViewModel updateAssignmentListViewModel)
     {
         try
         {
-            var userDto = _mapper.Map<UserDTO>(userUserViewModel);
-            var userUpdate = await _userService.Update(userDto);
+            var assignmentListDto = _mapper.Map<AssignmentListDTO>(updateAssignmentListViewModel);
+            var assignmentListUpdated = await _assignmentListService.Update(assignmentListDto);
             return Ok(new ResultViewModel
             {
-                Message = "Usuário atualizado com sucesso!",
+                Message = "Lista de tarefa atualizada com sucesso!",
                 Success = true,
-                Data = userUpdate
+                Data = assignmentListUpdated
             });
         }
         catch (DomainException ex)
@@ -74,25 +75,25 @@ public class UserController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("/api/v1/users/remove{id}")]
+    [Route("/api/v1/assignmentList/remove{id}")]
     public async Task<IActionResult> Remove(int id)
     {
         try
         {
-            var user = await _userService.Get(id);
+            var assignmnetList = await _assignmentListService.Get(id);
             
-            if (user == null)
+            if (assignmnetList == null)
                 return Ok(new ResultViewModel
                 {
-                    Message = "Nenhum usuário foi encontrado com o Id informado!",
+                    Message = "Nenhuma tarefa foi encontrada com o Id informado.",
                     Success = true,
-                    Data = user
+                    Data = assignmnetList
                 });
-
-            await _userService.Remove(id);
+            
+            await _assignmentListService.Remove(id);
             return Ok(new ResultViewModel
             {
-                Message = "Usuário removido com sucesso!",
+                Message = "Lista de tarefa removida com sucesso!",
                 Success = true,
                 Data = null
             });
@@ -108,25 +109,26 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/api/v1/users/get/{id}")]
+    [Route("/api/v1/assignmentList/get/{id}")]
     public async Task<IActionResult> Get(int id)
     {
         try
         {
-            var user = await _userService.Get(id);
+            var assignmentList = await _assignmentListService.Get(id);
 
-            if (user == null)
+            if (assignmentList == null)
                 return Ok(new ResultViewModel
                 {
-                    Message = "Nenhum usuário foi encontrado com o Id informado!",
+                    Message = "Nenhuma lista de tarefa foi encontrada com o Id informado.",
                     Success = true,
-                    Data = user
+                    Data = assignmentList
                 });
+
             return Ok(new ResultViewModel
             {
-                Message = "Usuário encontrado com sucesso!",
+                Message = "Lista de tarefa encontrada com sucesso!",
                 Success = true,
-                Data = user
+                Data = assignmentList
             });
         }
         catch (DomainException ex)
@@ -140,26 +142,26 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/api/v1/users/get-all")]
-    public async Task<IActionResult> GetAll()
+    [Route("/api/v1/assignmentList/get-all")]
+    public async Task<IActionResult> GetAll() // aqui é uma lista
     {
         try
         {
-            var allUsers = await _userService.GetAll();
-            
-            if (allUsers.Count == 0)
+            var assignmentLists = await _assignmentListService.GetAll();
+
+            if (assignmentLists.Count == 0)
                 return Ok(new ResultViewModel
                 {
-                    Message = "Nenhum usuário cadastrado!",
+                    Message = "Nenhuma lista cadastrada!",
                     Success = true,
-                    Data = allUsers
+                    Data = assignmentLists
                 });
-            
+
             return Ok(new ResultViewModel
             {
-                Message = "Usuários encontrados com sucesso!",
+                Message = "Lista de tarefas encontradas com sucesso!",
                 Success = true,
-                Data = allUsers
+                Data = assignmentLists
             });
         }
         catch(DomainException ex)
@@ -173,26 +175,26 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/api/v1/users/get-by-email")]
-    public async Task<IActionResult> GetByEmail([FromQuery] string email)
+    [Route("/api/v1/users/get-by-name")]
+    public async Task<IActionResult> GetByName([FromQuery] string name)
     {
         try
         {
-            var user = await _userService.GetByEmail(email);
+            var assignmentList = await _assignmentListService.GetByName(name);
 
-            if (user == null)
+            if (assignmentList == null)
                 return Ok(new ResultViewModel
                 {
-                    Message = "Nenhum usuário foi encontrado com o email informado",
+                    Message = "Nenhuma lista de tarefa foi encontrada com esse nome.",
                     Success = true,
-                    Data = user
+                    Data = assignmentList
                 });
 
             return Ok(new ResultViewModel
             {
-                Message = "Usuário encontrado com sucesso!",
+                Message = "Lista de tarefa encontrada com sucesso!",
                 Success = true,
-                Data = user
+                Data = assignmentList
             });
         }
         catch(DomainException ex)
@@ -206,26 +208,26 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/api/v1/users/search-by-email")]
-    public async Task<IActionResult> SearchByEmail([FromQuery] string email)
+    [Route("/api/v1/assignment/search-by-name")]
+    public async Task<IActionResult> SearchByName([FromQuery]string name)
     {
         try
         {
-            var allUsers = await _userService.SearchByEmail(email);
+            var assignemntList = await _assignmentListService.SearchByName(name);
 
-            if (allUsers.Count == 0)
+            if (assignemntList.Count == 0)
                 return Ok(new ResultViewModel
                 {
-                    Message = "Nenhum usuário foi encontrado com o email informado!",
+                    Message = "Nenhuma lista de tarefa foi encontra com o nome informado.",
                     Success = true,
                     Data = null
                 });
 
             return Ok(new ResultViewModel
             {
-                Message = "Usuário encontrado com sucesso!",
+                Message = "Lista de tarefa encontrada com sucesso!",
                 Success = true,
-                Data = allUsers
+                Data = assignemntList
             });
         }
         catch(DomainException ex)

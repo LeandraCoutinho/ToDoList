@@ -9,6 +9,6 @@ public interface IAssignmentListService
     Task Remove(int id);
     Task<AssignmentListDTO> Get(int id);
     Task<List<AssignmentListDTO>> GetAll();
-    Task<List<AssignmentListDTO>> GetByName(string name);
+    Task<AssignmentListDTO> GetByName(string name);
     Task<List<AssignmentListDTO>> SearchByName(string name);
 }

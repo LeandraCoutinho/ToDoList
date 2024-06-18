@@ -26,11 +26,12 @@ public class AssignmentRepository : BaseRepository<Assignment>, IAssignmentRepos
         return assignment.FirstOrDefault();
     }
 
-    public async Task<Assignment> GetByDescription(string description)
+    public virtual async Task<Assignment> GetByDescription(string description)
     {
-        var assignmentDescription = await _context.Set<Assignment>().Where(
-                x => x.Description == description)
+        var assignmentDescription = await _context.Set<Assignment>()
             .AsNoTracking()
+            .Where(
+                x => x.Description == description)
             .ToListAsync();
 
         return assignmentDescription.FirstOrDefault();

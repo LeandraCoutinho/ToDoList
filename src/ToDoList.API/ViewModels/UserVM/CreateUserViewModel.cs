@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDoList.API.ViewModels.UserViewModel;
+namespace ToDoList.API.ViewModels.UserVM;
 
 public class CreateUserViewModel
 {

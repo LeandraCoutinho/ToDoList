@@ -18,9 +18,10 @@ public class Assignment : Base
     public Assignment()
     { }
 
-    public Assignment(string description, bool concluded)
+    public Assignment(string description, int userId, bool concluded)
     {
         Description = description;
+        UserId = userId;
         Concluded = concluded;
         _errors = new List<string>();
     }
@@ -33,7 +34,7 @@ public class Assignment : Base
 
     public void SetUnconclued()
     {
-        Concluded = true;
+        Concluded = false;
         ConcluedAt = null;
     }
 

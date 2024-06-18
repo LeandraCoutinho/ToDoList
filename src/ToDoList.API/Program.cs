@@ -1,7 +1,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using ToDoList.API.ViewModels.AssignmentViewModel;
-using ToDoList.API.ViewModels.UserViewModel;
+using ToDoList.API.ViewModels.AssignmentListVM;
+using ToDoList.API.ViewModels.AssignmentVM;
+using ToDoList.API.ViewModels.UserVM;
 using ToDoList.Application.DTO;
 using ToDoList.Domain.Entities;
 using ToDoList.Infra.Data;
@@ -35,6 +36,10 @@ void AutoMapperDependenceInjection()
         cfg.CreateMap<Assignment, AssignmentDTO>().ReverseMap();
         cfg.CreateMap<CreateAssignmentViewModel, AssignmentDTO>().ReverseMap();
         cfg.CreateMap<UpdateAssignmentViewModel, AssignmentDTO>().ReverseMap();
+
+        cfg.CreateMap<AssignmentList, AssignmentListDTO>().ReverseMap();
+        cfg.CreateMap<CreateAssignmentListViewModel, AssignmentListDTO>().ReverseMap();
+        cfg.CreateMap<UpdateAssignmentListViewModel, AssignmentListDTO>().ReverseMap();
     });
     builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 }

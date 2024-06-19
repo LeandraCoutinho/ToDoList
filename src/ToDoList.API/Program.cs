@@ -92,6 +92,8 @@ void AutoMapperDependenceInjection()
 
 builder.Services.AddSingleton(d => builder.Configuration);
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddScoped<IPasswordHasher<User>, Argon2PasswordHasher<User>>();
 
 builder.Services.AddDbContext<ToDoListContext>(options =>

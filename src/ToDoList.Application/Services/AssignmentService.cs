@@ -35,15 +35,15 @@ public class AssignmentService : IAssignmentService
 
     public async Task<AssignmentDTO> Update(AssignmentDTO assignmentDto)
     {
-        var assignmetExist = await _assignmentRepository.GetById(assignmentDto.Id, assignmentDto.UserId);
+        var assignmentExist = await _assignmentRepository.GetByDescription(assignmentDto.Description);
         
-        if (assignmetExist == null)
+        if (assignmentExist == null)
             throw new DomainException("Não foi encontrada nenhuma tarefa com esse Id");
 
         var assignment = _mapper.Map<Assignment>(assignmentDto);
         assignment.Validate();
-        
-        var assignmentUpdated = _mapper.Map<AssignmentDTO>(assignmentDto);
+
+        var assignmentUpdated = await _assignmentRepository.Update(assignment);
 
         return _mapper.Map<AssignmentDTO>(assignmentUpdated);
     }

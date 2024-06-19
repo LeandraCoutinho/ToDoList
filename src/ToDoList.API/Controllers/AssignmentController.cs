@@ -41,15 +41,11 @@ public class AssignmentController : ControllerBase
         }
         catch (DomainException ex)
         {
-            //return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
-            Console.WriteLine($"Domain exception: {ex.Message}");
             return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Exception: {ex.Message}");
             return StatusCode(500, Responses.ApplicationErrorMessage());
-            //return StatusCode(500, Responses.ApplicationErrorMessage());
         }
     }
 

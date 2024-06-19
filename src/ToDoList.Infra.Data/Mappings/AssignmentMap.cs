@@ -31,7 +31,7 @@ public class AssignmentMap : IEntityTypeConfiguration<Assignment>
         builder.Property(x => x.Concluded)
             .IsRequired()
             .HasDefaultValue(false)
-            .HasColumnType("TINYINT");
+            .HasColumnType("VARCHAR(5)");
 
         builder.Property(x => x.ConcluedAt)
             .IsRequired(false)

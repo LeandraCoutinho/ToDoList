@@ -5,8 +5,8 @@ namespace ToDoList.Domain.Entities;
 
 public class AssignmentList : Base
 {
-    public string Name { get; private set; } = null!;
-    public int UserId { get; private set; } 
+    public string Name { get; set; } = null!;
+    public int UserId { get; set; } 
 
     public User User { get; set; } = null!;
     public ICollection<Assignment> Assignments { get; set; } 

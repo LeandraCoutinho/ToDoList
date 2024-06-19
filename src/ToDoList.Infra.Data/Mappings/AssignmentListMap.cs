@@ -22,7 +22,7 @@ public class AssignmentListMap : IEntityTypeConfiguration<AssignmentList>
 
         builder.Property(x => x.UserId)
             .IsRequired();
-
+        
         builder.HasMany(x => x.Assignments)
             .WithOne(p => p.AssignmentList)
             .OnDelete(DeleteBehavior.Restrict);

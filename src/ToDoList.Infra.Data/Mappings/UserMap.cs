@@ -24,9 +24,9 @@ public class UserMap : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.Password)
             .IsRequired()
-            .HasMaxLength(80)
+            .HasMaxLength(255)
             .HasColumnName("password")
-            .HasColumnType("VARCHAR(30)");
+            .HasColumnType("VARCHAR(255)");
 
         builder.Property(x => x.Email)
             .IsRequired()
@@ -36,12 +36,10 @@ public class UserMap : IEntityTypeConfiguration<User>
 
         builder.HasMany(x => x.Assignments)
             .WithOne(p => p.User)
-            .HasForeignKey(c => c.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .HasForeignKey(c => c.UserId);
 
         builder.HasMany(x => x.AssignmentLists)
             .WithOne(p => p.User)
-            .HasForeignKey(c => c.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .HasForeignKey(c => c.UserId);
     }
 }

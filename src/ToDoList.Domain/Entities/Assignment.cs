@@ -8,7 +8,7 @@ public class Assignment : Base
     public string Description { get; set; } = null!;
     public int UserId { get; set; }
     public int? AssignmentListId { get; set; }
-    public bool Concluded { get; set; }
+    public string Concluded { get; set; } = null!;
     public DateTime? ConcluedAt { get; set; }
     public DateTime? Deadline { get; set; }
 
@@ -18,26 +18,14 @@ public class Assignment : Base
     public Assignment()
     { }
 
-    public Assignment(string description, int userId, bool concluded)
+    public Assignment(string description, int userId, string concluded)
     {
         Description = description;
         UserId = userId;
         Concluded = concluded;
         _errors = new List<string>();
     }
-
-    public void SetConclud()
-    {
-        Concluded = true;
-        ConcluedAt = DateTime.Now;
-    }
-
-    public void SetUnconclued()
-    {
-        Concluded = false;
-        ConcluedAt = null;
-    }
-
+    
     public override bool Validate()
     {
         var validator = new AssignmentValidator();

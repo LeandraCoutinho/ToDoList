@@ -17,9 +17,9 @@ public class UpdateAssignmentViewModel
     public int UserId { get; set; }
     
     [Required(ErrorMessage = "Informe se a tarefa já foi concluída.")]
-    public bool Concluded { get; private set; }
+    public string Concluded { get;  set; }  = null!;
     
     public int? AssignmentListId { get; set; }
-    public DateTime? ConcluedAt { get; private set; }
+    public DateTime? ConcluedAt { get; set; }
     public DateTime? Deadline { get; set; }
 }

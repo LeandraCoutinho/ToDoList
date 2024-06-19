@@ -13,7 +13,7 @@ public class CreateAssignmentViewModel
     public int UserId { get; set; }
     
     [Required(ErrorMessage = "Informe se a tarefa já foi concluída.")]
-    public bool Concluded { get;  set; }
+    public string Concluded { get;  set; }  = null!;
     
     
     public int? AssignmentListId { get; set; }

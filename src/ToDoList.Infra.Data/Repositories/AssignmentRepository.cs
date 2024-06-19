@@ -40,7 +40,7 @@ public class AssignmentRepository : BaseRepository<Assignment>, IAssignmentRepos
     public virtual async Task<List<Assignment>> GetConcluded()
     {
         return await _context.Assignments.Where
-            (p => p.Concluded == true)
+            (p => p.Concluded == "true")
             .AsNoTracking()
             .ToListAsync();
     }

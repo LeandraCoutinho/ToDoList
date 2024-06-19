@@ -1,5 +1,6 @@
 using System.Data;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using ToDoList.Application.DTO;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Exceptions;
@@ -12,11 +13,13 @@ public class AssignmentListService : IAssignmentListService
 {
     private readonly IAssignmentListRepository _assignmentListRepository;
     private readonly IMapper _mapper;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AssignmentListService(IAssignmentListRepository assignmentListRepository, IMapper mapper)
+    public AssignmentListService(IAssignmentListRepository assignmentListRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
     {
         _assignmentListRepository = assignmentListRepository;
         _mapper = mapper;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<AssignmentListDTO> Create(AssignmentListDTO assignmentListDto)
@@ -25,10 +28,11 @@ public class AssignmentListService : IAssignmentListService
 
         if (assignmetListExist != null)
             throw new DomainException("Já existe uma lista de tarefa cadastrada com esse nome!");
-
+        
         var assignmentList = _mapper.Map<AssignmentList>(assignmentListDto);
         assignmentList.Validate();
 
+      //  assignmentList.UserId = GetUserId();
         var assignmentListCreated = await _assignmentListRepository.Create(assignmentList);
 
         return _mapper.Map<AssignmentListDTO>(assignmentListCreated);
@@ -78,5 +82,14 @@ public class AssignmentListService : IAssignmentListService
         var assignmentList = await _assignmentListRepository.SearchByName(name);
 
         return _mapper.Map<List<AssignmentListDTO>>(assignmentList);
+    }
+    
+    private int GetUserId()
+    {
+        var claim = _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
+        if (claim == null)
+            return 0;
+        
+        return string.IsNullOrWhiteSpace(claim.Value) ? 0 : int.Parse(claim.Value);
     }
 }

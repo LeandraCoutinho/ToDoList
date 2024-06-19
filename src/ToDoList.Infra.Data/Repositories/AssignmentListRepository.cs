@@ -26,6 +26,17 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
         return assigmentList.FirstOrDefault();
     }
 
+    
+    public async Task<AssignmentList> GetByNameAndId(string name, int userId)
+    {
+        var assignmnetList = await _context.Set<AssignmentList>()
+            .AsNoTracking()
+            .Where(x => x.Name == name && x.UserId == userId)
+            .ToListAsync();
+
+        return assignmnetList.FirstOrDefault();
+    }
+
     public virtual async Task<List<AssignmentList>> SearchByName(string name)
     {
         var allAssigmentLists = await _context.AssignmentLists.Where

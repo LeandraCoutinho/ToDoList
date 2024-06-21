@@ -14,10 +14,9 @@ public class AssignmentList : Base
     public AssignmentList()
     { }
 
-    public AssignmentList(string name, int userId)
+    public AssignmentList(string name)
     {
         Name = name;
-        UserId = userId;
         Assignments = new List<Assignment>();
         _errors = new List<string>();
     }

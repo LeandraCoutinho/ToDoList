@@ -15,41 +15,42 @@ public class AssignmentListService : IAssignmentListService
     private readonly IMapper _mapper;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AssignmentListService(IAssignmentListRepository assignmentListRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+    public AssignmentListService(IAssignmentListRepository assignmentListRepository, IMapper mapper, IHttpContextAccessor contextAccessor)
     {
         _assignmentListRepository = assignmentListRepository;
         _mapper = mapper;
-        _httpContextAccessor = httpContextAccessor;
+        _httpContextAccessor = contextAccessor;
     }
 
     public async Task<AssignmentListDTO> Create(AssignmentListDTO assignmentListDto)
     {
-        var assignmetListExist = await _assignmentListRepository.GetByName(assignmentListDto.Name);
-
+        var assignmetListExist = await _assignmentListRepository.GetByNameAndId(assignmentListDto.Name, GetUserId());
         if (assignmetListExist != null)
             throw new DomainException("Já existe uma lista de tarefa cadastrada com esse nome!");
         
         var assignmentList = _mapper.Map<AssignmentList>(assignmentListDto);
         assignmentList.Validate();
 
-      //  assignmentList.UserId = GetUserId();
+        assignmentList.UserId = GetUserId();
+        
         var assignmentListCreated = await _assignmentListRepository.Create(assignmentList);
-
         return _mapper.Map<AssignmentListDTO>(assignmentListCreated);
     }
 
     public async Task<AssignmentListDTO> Update(AssignmentListDTO assignmentListDto)
     {
         var assignmentListExist = await _assignmentListRepository.Get(assignmentListDto.Id);
-
         if (assignmentListExist == null)
             throw new DataException("Não existe nenhuma lista de tarefa cadastrada com esse Id");
-
+        
         var assignmentList = _mapper.Map<AssignmentList>(assignmentListDto);
+        assignmentList.Validate();
+
+        assignmentList.UserId = GetUserId();
 
         var assignmentListUpdated = await _assignmentListRepository.Update(assignmentList);
-
-        return _mapper.Map<AssignmentListDTO>(assignmentListUpdated); }
+        return _mapper.Map<AssignmentListDTO>(assignmentListUpdated); 
+    }
 
     public async Task Remove(int id)
     {
@@ -84,12 +85,15 @@ public class AssignmentListService : IAssignmentListService
         return _mapper.Map<List<AssignmentListDTO>>(assignmentList);
     }
     
+    
     private int GetUserId()
     {
-        var claim = _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
+        var claim = _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(
+            x => x.Type == "Id");
         if (claim == null)
-            return 0;
-        
+            throw new DomainException("Usuário inválido!");
         return string.IsNullOrWhiteSpace(claim.Value) ? 0 : int.Parse(claim.Value);
     }
+    
+    
 }

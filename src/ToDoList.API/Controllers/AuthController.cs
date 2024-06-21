@@ -1,6 +1,5 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.API.Token;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
 using ToDoList.Application.DTO;

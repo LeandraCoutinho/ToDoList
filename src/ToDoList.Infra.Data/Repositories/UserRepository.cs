@@ -37,4 +37,5 @@ public class UserRepository : BaseRepository<User>, IUserRepository
 
         return allUsers;
     }
+    
 }

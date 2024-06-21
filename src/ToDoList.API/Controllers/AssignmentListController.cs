@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
@@ -24,6 +25,7 @@ public class AssignmentListController : ControllerBase
         _mapper = mapper;
     }
 
+    [Authorize]
     [Route("/api/v1/assignmentList/create")]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateAssignmentListViewModel createAssignmentListViewModel)
@@ -49,6 +51,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpPut]
     [Route("api/v1/assignmentList/update")]
     public async Task<IActionResult> Update(UpdateAssignmentListViewModel updateAssignmentListViewModel)
@@ -74,6 +77,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpDelete]
     [Route("/api/v1/assignmentList/remove{id}")]
     public async Task<IActionResult> Remove(int id)
@@ -108,6 +112,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignmentList/get/{id}")]
     public async Task<IActionResult> Get(int id)
@@ -141,6 +146,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignmentList/get-all")]
     public async Task<IActionResult> GetAll() // aqui é uma lista
@@ -174,6 +180,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/users/get-by-name")]
     public async Task<IActionResult> GetByName([FromQuery] string name)
@@ -207,6 +214,7 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignment/search-by-name")]
     public async Task<IActionResult> SearchByName([FromQuery]string name)

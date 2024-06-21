@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Utilities;
 using ToDoList.API.ViewModels;
@@ -23,6 +24,7 @@ public class AssignmentController : ControllerBase
         _mapper = mapper;
     }
     
+    [Authorize]
     [HttpPost]
     [Route("/api/v1/assignment/create")]
     public async Task<IActionResult> Create([FromBody] CreateAssignmentViewModel createAssignmentViewModel)
@@ -49,6 +51,7 @@ public class AssignmentController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpPut]
     [Route("api/v1/assignment/update")]
     public async Task<IActionResult> Update([FromBody] UpdateAssignmentViewModel updateAssignmentViewModel)
@@ -74,6 +77,7 @@ public class AssignmentController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpDelete]
     [Route("/api/v1/assignment/remove{id}")]
     public async Task<IActionResult> Remove(int id)
@@ -108,6 +112,7 @@ public class AssignmentController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignment/get/{id}")]
     public async Task<IActionResult> Get(int id)
@@ -141,6 +146,7 @@ public class AssignmentController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignment/get-all")]
     public async Task<IActionResult> GetAll()
@@ -174,6 +180,7 @@ public class AssignmentController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("/api/v1/assignment/get-concluded")]
     public async Task<IActionResult> GetConcluded()

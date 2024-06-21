@@ -11,28 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2abd029-de2c-4532-8c39-9b63a0d00b85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/20240619155742_aumentandoSenha.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/20240619155742_aumentandoSenha.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/20240619163139_aumentandoConcluded.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/20240619163139_aumentandoConcluded.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDoList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/CreateAssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/CreateAssignmentViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/UpdateAssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/ViewModels/AssignmentVM/UpdateAssignmentViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/DTO/AssignmentDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.API/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/AutoMapper/AutoMapperProfile.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Application/Services/AssignmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentListRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Contracts/IAssignmentListRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/Assignment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Domain/Validators/UserValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Domain/Validators/UserValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/AssignmentMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/UserMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Mappings/UserMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/ToDoListContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Migrations/ToDoListContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentListRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentListRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.Infra.Data/Repositories/UserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +33,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/ToDoList.Application/AutoMapper/AutoMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -61,29 +45,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.ToDoList.API: http.executor&quot;: &quot;Run&quot;,
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.37298092&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.ToDoList.API: http.executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.518797",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\leand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\leand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\leand\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\leand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\leand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\leand\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ToDoList.API: http">
     <configuration name="ToDoList.API" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -188,7 +172,11 @@
       <workItem from="1718740292278" duration="7726000" />
       <workItem from="1718805827291" duration="1392000" />
       <workItem from="1718810967415" duration="10124000" />
-      <workItem from="1718825279876" duration="353000" />
+      <workItem from="1718825279876" duration="2889000" />
+      <workItem from="1718832060819" duration="1433000" />
+      <workItem from="1718976508240" duration="3545000" />
+      <workItem from="1718980616691" duration="2388000" />
+      <workItem from="1718985647643" duration="8116000" />
     </task>
     <servers />
   </component>
@@ -201,243 +189,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>29</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="916" />
-            </startOffsets>
-            <endOffsets>
-              <option value="917" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>48</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1614" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1615" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>47</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1545" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1605" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1531" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1532" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>33</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1051" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1134" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>32</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="952" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1038" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>31</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="938" />
-            </startOffsets>
-            <endOffsets>
-              <option value="939" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>34</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1147" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1347" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>40</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1356" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1357" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.API/Controllers/AssignmentListController.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.API\Controllers\AssignmentListController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1415" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1486" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>25</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="603" />
-            </startOffsets>
-            <endOffsets>
-              <option value="604" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="613" />
-            </startOffsets>
-            <endOffsets>
-              <option value="659" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>27</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="668" />
-            </startOffsets>
-            <endOffsets>
-              <option value="710" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>31</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="767" />
-            </startOffsets>
-            <endOffsets>
-              <option value="807" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>32</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="824" />
-            </startOffsets>
-            <endOffsets>
-              <option value="856" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>37</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="984" />
-            </startOffsets>
-            <endOffsets>
-              <option value="996" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>34</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="870" />
-            </startOffsets>
-            <endOffsets>
-              <option value="964" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/ToDoList.Domain/Entities/AssignmentList.cs</url>
-          <line>29</line>
-          <properties documentPath="C:\Users\leand\RiderProjects\ToDoList\src\ToDoList.Domain\Entities\AssignmentList.cs" containingFunctionPresentation="Method 'Validate'">
-            <startOffsets>
-              <option value="720" />
-            </startOffsets>
-            <endOffsets>
-              <option value="744" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="((ToDoList.Infra.Data.Repositories.AssignmentListRepository) this._assignmentListRepository)._context" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
